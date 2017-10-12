@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-
+if [ -n "$1" ]
+then
 movie=$1
 echo "Movie is: $movie"
-curl 'http://www.omdbapi.com/?t='$movie'&apikey=BanMePlz'
-echo "Poster to $movie is: "
-curl 'http://img.omdbapi.com/?t='$movie'&apikey=BanMePlz'
+echo "Poster to the movie is: "
+curl -s 'http://www.omdbapi.com/?t='$movie'&apikey=BanMePlz'|jq '.Poster'
+else
+echo "You have to enter movie title as a command line param."
+fi
