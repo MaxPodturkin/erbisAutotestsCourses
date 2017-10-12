@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-curl 'http://img.omdbapi.com/?t=Titanic&apikey=BanMePlz'
+movie=$1
+echo "Movie is: $movie"
+curl 'http://www.omdbapi.com/?t='$movie'&apikey=BanMePlz'
+echo "Poster to $movie is: "
+curl 'http://img.omdbapi.com/?t='$movie'&apikey=BanMePlz'
