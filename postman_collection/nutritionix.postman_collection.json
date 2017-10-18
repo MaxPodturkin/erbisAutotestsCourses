@@ -1,0 +1,115 @@
+{
+	"id": "68289e48-d68f-608a-81e8-47874b0b40cd",
+	"name": "nutritionix",
+	"description": "",
+	"order": [
+		"7b801358-fad9-a935-5f47-ac8946eff1d5",
+		"e14e1ad0-c97d-3b7d-f00d-8cbe1889163b"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1508343902760,
+	"owner": "978200",
+	"public": false,
+	"requests": [
+		{
+			"id": "7b801358-fad9-a935-5f47-ac8946eff1d5",
+			"headers": "x-app-id: {{app-id}}\nx-app-key: {{app-key}}\nx-remote-user-id: {{user-id}}\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "x-app-id",
+					"value": "{{app-id}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-app-key",
+					"value": "{{app-key}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-remote-user-id",
+					"value": "{{user-id}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/track-api/v2/natural/nutrients",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508346325815,
+			"name": "Get nutrients",
+			"description": "",
+			"collectionId": "68289e48-d68f-608a-81e8-47874b0b40cd",
+			"responses": [],
+			"rawModeData": "{\r\n \"query\":\"{{default_meal}}\"\r\n}"
+		},
+		{
+			"id": "e14e1ad0-c97d-3b7d-f00d-8cbe1889163b",
+			"headers": "x-app-id: {{app-id}}\nx-app-key: {{app-key}}\nx-remote-user-id: {{user-id}}\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "x-app-id",
+					"value": "{{app-id}}",
+					"description": ""
+				},
+				{
+					"key": "x-app-key",
+					"value": "{{app-key}}",
+					"description": ""
+				},
+				{
+					"key": "x-remote-user-id",
+					"value": "{{user-id}}",
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"url": "{{tracking_url}}/v2/search/instant?query={{default_meal}}",
+			"queryParams": [
+				{
+					"key": "query",
+					"value": "{{default_meal}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508346341468,
+			"name": "Get meal",
+			"description": "",
+			"collectionId": "68289e48-d68f-608a-81e8-47874b0b40cd",
+			"responses": []
+		}
+	]
+}
